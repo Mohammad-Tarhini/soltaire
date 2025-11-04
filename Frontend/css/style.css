@@ -149,6 +149,14 @@ p{
     background-color: yellow;
     font-size: 20px;
 }
+.scoretablesection{
+    display: none;
+    text-align: center;
+    margin-top: 5%;
+}
+.tableerror{
+    display: none;
+}
 
 @media (max-width: 700px){
     .topic{
