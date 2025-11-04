@@ -1,0 +1,166 @@
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+.herosection {
+    background-image: url(../images/bockerimage3.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center;
+    margin: auto;
+    padding: 30px;
+    height: 500px;
+   
+}
+.topiclogo {
+    background-image: url(../images/solitairelogo.jpeg);
+    width: 300px;
+    position: relative;
+    
+
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}
+
+.topic{
+    display: flex;
+    
+    
+}
+.subtopic{
+    font-size: 40px;
+    color: white;
+    margin-left: -30px;
+    color: wheat;
+}
+.nav_href{
+    display: flex;
+    position: relative;
+    left: 60%;
+    top: -20%;
+}
+ .href{
+    margin: 2%;
+ }
+ .outhref{
+    color: turquoise;
+    font-size: 30px;
+    text-decoration: underline;
+ }
+
+    
+.dropdownposition{
+ margin-left: 4%;
+      bottom: 260px;
+      left:299px
+}
+
+    /* The button (name of the dropdown) */
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* The dropdown content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 10px 12px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    /* Show dropdown when hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Change button color on hover */
+    .dropdown:hover .dropbtn {
+      background-color: #7a196d;
+    }
+    .title{
+        font-size: 80px;
+       margin-left:10% ;
+    }
+.downloadbutton{
+    width: 50%;
+    height:70px ;
+    margin: 2%;
+    margin-top: -2%;
+    background-color: #678ba1;
+    font-size: 20px;
+    color: white;
+}
+.downloadbuttons{
+    display: flex;
+
+}
+p{
+    font-size: 30px;
+    text-align: center;
+    margin: 10%;
+    margin-top: -3%;
+}
+.end{
+    background-color: black;
+    width: 100%;
+    height: 200px;
+}
+.nameinputsection{
+    text-align: center;
+    font-size: 30px;
+    color: yellow;
+    display: none;
+}
+.nameinput{
+    font-size: 20px;
+    width: 300px;
+    height: 40px;
+}
+.namesubmit{
+    width: 10%;
+    height: 40px;
+    position: relative;
+    background-color: yellow;
+    font-size: 20px;
+}
+
+@media (max-width: 700px){
+    .topic{
+        display: block;
+       
+    }
+    .subtopic{
+        font-size: 25px;
+        text-align: center;
+        position: relative;
+        right: 50px;
+       
+    }
+    
+}
