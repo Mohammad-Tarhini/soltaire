@@ -96,10 +96,10 @@ function axiosGetScores(){
 
             const tbody=document.createElement("tbody");
 
-            data.players.forEach(player => {
+            data.players.forEach((player,index) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
-                <td>${player.id}</td>
+                <td>${index+1}</td>
                 <td>${player.name}</td>
                 <td>${player.score}</td>`;
                 tbody.appendChild(row);
