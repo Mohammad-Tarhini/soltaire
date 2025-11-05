@@ -1,5 +1,21 @@
 <?php
+// Allow requests from your frontend
+header("Access-Control-Allow-Origin: *");
+
+// Allow these HTTP methods
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+
+// Allow specific headers
+header("Access-Control-Allow-Headers: Content-Type");
+
+// If the request is preflight (OPTIONS), stop here
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+//The previous statements are taken from ChatGPT.
 include("../connection/connection.php");
+try{
 if(isset($_POST['name']) && isset($_POST['score'])){
     $name = $_POST['name'];
     $score = $_POST['score'];
@@ -27,9 +43,12 @@ if(isset($_POST['name']) && isset($_POST['score'])){
         echo json_encode(["status" => "error", "message" => "Failed to add player"]);
     }
     $stmt2->close();
-} else {
+}} else {
     echo json_encode(["status" => "error", "message" => "Invalid input"]);
 }
-}}
+
+}}catch(Exception $e){
+    echo json_encode(["status" =>"error" , "message" => $e ->getMessage() ]);
+}
 
 ?>

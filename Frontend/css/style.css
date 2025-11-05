@@ -60,18 +60,18 @@ html, body {
       left:299px
 }
 
-    /* The button (name of the dropdown) */
-    .dropbtn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 15px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
 
-    /* The dropdown content */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
     .dropdown-content {
       display: none;
       position: absolute;
@@ -82,7 +82,7 @@ html, body {
       z-index: 1;
     }
 
-    /* Links inside the dropdown */
+
     .dropdown-content a {
       color: black;
       padding: 10px 12px;
@@ -94,12 +94,10 @@ html, body {
       background-color: #ddd;
     }
 
-    /* Show dropdown when hover */
+    
     .dropdown:hover .dropdown-content {
       display: block;
     }
-
-    /* Change button color on hover */
     .dropdown:hover .dropbtn {
       background-color: #7a196d;
     }
@@ -154,9 +152,37 @@ p{
     text-align: center;
     margin-top: 5%;
 }
-.tableerror{
-    display: none;
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
+th {
+  background-color: #4CAF50;
+  color: white;
+  text-align: left;
+  padding: 12px;
+  font-size: 16px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+
+
+
+tr {
+  background-color: #f9f9f9;
+}
+
+
 
 @media (max-width: 700px){
     .topic{
