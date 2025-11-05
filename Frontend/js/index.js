@@ -1,4 +1,3 @@
-
 const btnScoring = document.getElementById("btnscoring");
 const nameInputSection = document.getElementById("nameinputsection");
 const btnnamesubmit= document.getElementById("namesubmit");
@@ -13,11 +12,12 @@ function handlescoringClick()
 {
      if (nameInputSection.style.display === "none" || nameInputSection.style.display === "") {
          nameInputSection.style.display = "block";
-         scoretablesection.textContent="";
+         scoretablesection.innerHTML="";
          scoretablesection.style.display="none";    
      } else {
          nameInputSection.style.display = "none";
          lblsubmitresult.innerText="";
+         nameInput.value="";
      }
 
 }
@@ -26,11 +26,12 @@ function handleheaderboardClick(){
     if(scoretablesection.style.display === "none" || scoretablesection.style.display === "") {
         scoretablesection.style.display = "block";
         nameInputSection.style.display="none";
+        lblsubmitresult.innerHTML="";
+        nameInput.value="";
         axiosGetScores()
-
     } else {
         scoretablesection.style.display = "none";
-        scoretablesection.textContent="";
+        scoretablesection.innerHTML="";
         
     }
 }
@@ -47,6 +48,7 @@ function handlenamesubmitClick(){
 
 }
 function axiosPostScore(name,score){
+   try{
     const formData = new FormData();
     formData.append('name', name);
     formData.append('score', score);
@@ -55,7 +57,7 @@ function axiosPostScore(name,score){
       { 
         const data = response.data;
         if(data.status==="success"){
-        lblsubmitresult.innerText="Mabrouk "+name+" your score of "+score+" has been submitted!";
+        lblsubmitresult.textContent="Mabrouk "+name+" your score is "+score;
         nameInput.value="";
         }
         else{
@@ -63,11 +65,11 @@ function axiosPostScore(name,score){
         console.error(data.message)
         }
       })
-      .catch(function (error) {
+    }catch( error) {
         
-        lblsubmitresult.innerText="Error submitting score. Please try again.";
+        lblsubmitresult.textContent="Error submitting score. Please try again.";
         console.error('Error submitting score:', error + data.message);
-      });}
+      };}
 
 function axiosGetScores(){
   try{
@@ -76,12 +78,8 @@ function axiosGetScores(){
           const data = response.data;
         if(data.status==="success")
         {
-          if(data.players.length==0){
-            scoretablesection.style.display="block";
-            scoretablesection.textContent="no data"
-
-          }
-          else{
+          
+          
             scoretablesection.style.display="block";
             const table=document.createElement("table");
             table.className="scoretable";
@@ -109,11 +107,12 @@ function axiosGetScores(){
             table.appendChild(tbody);
             scoretablesection.appendChild(table);
             
-          }
+          
         }else{
             
             scoretablesection.style.display="block";
-           scoretablesection="Error fetching scores: "+data.message;
+           scoretablesection.innerHTML="<h1>Error :" +data.message+"</h1>";
+           
 
 
         }

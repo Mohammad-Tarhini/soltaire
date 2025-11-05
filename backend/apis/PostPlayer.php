@@ -44,7 +44,7 @@ if(isset($_POST['name']) && isset($_POST['score'])){
     }
     $stmt2->close();
 }} else {
-    echo json_encode(["status" => "error", "message" => "Invalid input"]);
+    echo json_encode(["status" => "error", "message" => "error in execute "]);
 }
 
 }}catch(Exception $e){

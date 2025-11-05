@@ -7,7 +7,6 @@ html, body {
     background-image: url(../images/bockerimage3.webp);
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: scroll;
     background-position: center;
     margin: auto;
     padding: 30px;
@@ -114,6 +113,9 @@ html, body {
     font-size: 20px;
     color: white;
 }
+.downloadbuttons :hover{
+    background-color: #4CAF50;
+}
 .downloadbuttons{
     display: flex;
 
@@ -125,9 +127,22 @@ p{
     margin-top: -3%;
 }
 .end{
-    background-color: black;
+    display: flex;
+    background-color: green;
     width: 100%;
     height: 200px;
+}
+.end a{
+    width: 20%;
+}
+.endlogo{
+    margin: 10%;
+    width: 30%;
+}
+.endlodtxt{
+    margin-left: 10%;
+    margin-top: -5%;
+    font-size: 30px;
 }
 .nameinputsection{
     text-align: center;
@@ -184,17 +199,13 @@ tr {
 
 
 
-@media (max-width: 700px){
+@media (max-width: 900px){
     .topic{
-        display: block;
+       flex-direction: column;
        
     }
-    .subtopic{
-        font-size: 25px;
-        text-align: center;
-        position: relative;
-        right: 50px;
-       
-    }
+    
+    .nav_href{
+        flex-direction: column;    }
     
 }
