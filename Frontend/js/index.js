@@ -64,6 +64,8 @@ function axiosPostScore(name,score){
         lblsubmitresult.innerText="Error submitting score: "+data.message;
         console.error(data.message)
         }
+      }).catch(function(error){
+        console.error('error: ',error)
       })
     }catch( error) {
         
@@ -78,8 +80,7 @@ function axiosGetScores(){
           const data = response.data;
         if(data.status==="success")
         {
-          
-          
+
             scoretablesection.style.display="block";
             const table=document.createElement("table");
             table.className="scoretable";
@@ -113,10 +114,10 @@ function axiosGetScores(){
             scoretablesection.style.display="block";
            scoretablesection.innerHTML="<h1>Error :" +data.message+"</h1>";
            
-
-
         }
 
+      }).catch(function(error){
+        console.error('Error',error);
       })
     
     }catch(error){
